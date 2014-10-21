@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git@github.com:sekko27/node-gridfs-form.git"
   },
+  "author": "Sekko <sekko272727@gmail.com>",
   "keywords": [
     "mongo",
     "gridfs",
