@@ -1,0 +1,27 @@
+{
+  "name": "node-gridfs-form",
+  "version": "0.0.1",
+  "description": "Multipart form post handler, which stores files in gridfs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec --recursive tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sekko27/node-gridfs-form.git"
+  },
+  "keywords": [
+    "mongo",
+    "gridfs",
+    "multipart",
+    "stream",
+    "form",
+    "upload"
+  ],
+  "author": "Balázs Kovács <balazs.kovacs@metrix.co.hu>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/sekko27/node-gridfs-form/issues"
+  },
+  "homepage": "https://github.com/sekko27/node-gridfs-form"
+}
