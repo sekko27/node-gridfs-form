@@ -11,6 +11,7 @@ class BusboyEmitter extends EventEmitter
 
 class BusboyParser extends MultipartFormParser
   constructor: (options) ->
+    return new BusboyParser(options) if not (@ instanceof BusboyParser)
     @options = options
 
   createOptions: (request) ->

@@ -3,6 +3,7 @@ q = require 'q'
 
 class MultipartForm
   constructor: (parser, grid) ->
+    return new MultipartForm(parser, grid) if not (@ instanceof MultipartForm)
     throw "Parser is not defined" if not parser
     throw "Grid is not defined" if not grid
     Object.defineProperty @, 'parser', get: -> parser
