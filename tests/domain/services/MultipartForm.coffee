@@ -1,8 +1,5 @@
 _ = require 'lodash'
-wire = require 'wire'
 request = require 'supertest'
-
-process.env['LIB_PREFIX'] = 'test-lib'
 
 {Runner} = require 'wire-context-helper'
 {assert} = require 'chai'

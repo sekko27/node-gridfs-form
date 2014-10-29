@@ -1,4 +1,4 @@
-{Helper} = require 'wire-context-helper'
+Helper = require('wire-context-helper').Helper('test-lib')
 
 module.exports =
   helper:
