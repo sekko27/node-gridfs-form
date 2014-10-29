@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec --recursive tests",
-    "prepublish": "coffee -c -o lib src && coffee -c index.coffee"
+    "prepublish": "coffee -c -o lib src && coffee -c index.coffee",
     "postinstall": "[ -d \"lib\" ] || (echo \"Compiling coffee sources\" && coffee -c -o lib src && coffee -c index.coffee)"
   },
   "repository": {
