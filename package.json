@@ -1,11 +1,11 @@
 {
   "name": "gridfs-form",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Multipart form binding storing files in gridfs.",
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec --recursive tests",
-    "prepublish": "coffee -c -o lib src && coffee -c index.coffee",
+    "prepublish": "coffee -c -o lib src && coffee -c index.coffee && coffee -c -o tests tests-src && coffee -c -o tests-lib tests-lib-src",
     "postinstall": "[ -d \"lib\" ] || (echo \"Compiling coffee sources\" && coffee -c -o lib src && coffee -c index.coffee)"
   },
   "repository": {
