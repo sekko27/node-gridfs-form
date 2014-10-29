@@ -1,7 +1,7 @@
 {
   "name": "node-gridfs-form",
-  "version": "0.0.1",
-  "description": "Multipart form post handler, which stores files in gridfs.",
+  "version": "0.0.2",
+  "description": "Multipart form binding storing files in gridfs.",
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec --recursive tests"
@@ -19,8 +19,7 @@
     "form",
     "upload"
   ],
-  "author": "Balázs Kovács <balazs.kovacs@metrix.co.hu>",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sekko27/node-gridfs-form/issues"
   },
@@ -29,7 +28,10 @@
     "async": "~0.9.0",
     "gridfs-stream": "~0.5.1",
     "lodash": "~2.4.1",
-    "busboy": "~0.2.9"
+    "busboy": "~0.2.9",
+    "wire": "~0.10.9",
+    "wire-context-helper": "~0.1.21",
+    "q": "~1.0.1"
   },
   "devDependencies": {
     "chai-as-promised": "~4.1.1",
@@ -37,6 +39,10 @@
     "load-grunt-tasks": "~0.6.0",
     "time-grunt": "~1.0.0",
     "supertest": "~0.14.0",
-    "mocha": "~1.21.5"
+    "mocha": "~1.21.5",
+    "express": "~4.10.1",
+    "body-parser": "~1.9.2",
+    "mongoose": "~3.8.18",
+    "wire-context-helper": "~0.1.20"
   }
 }
