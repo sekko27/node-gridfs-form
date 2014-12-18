@@ -18,24 +18,18 @@ The module exports:
 
 For the details, see tests.
 
-```javascript
+```coffeescroipt
 // connection is a mongo connection, driver is the mongoose module
-var Grid = require('gridfs-stream');
-var GridfsForm = require('gridfs-form');
-var Parser = GridfsForm.BusboyParser;
-var Form = GridfsForm.Form;
+Grid = require 'gridfs-stream'
+{BusboyParser, Form} = require 'gridfs-form'
 
-var grid = new Grid(connection.db, driver.mongo)
+grid = new Grid connection.db, driver.mongo
 
 // app is an express instance
 
-app.get('/upload', function(req, res){
-    var form = new Form(new Parser(), grid);
-    form.bind(req, function(err, bind){
-        if (err) {
-            return res.status(500).send(err);
-        }
-        res.status(200).json(bind);    
-    });
-});  
+app.post '/upload', (req, res) ->
+    form = new Form new Parser(), grid
+    form.bind req, (err, bind) ->
+        return res.status(500).send(err) if err
+        res.status(200).json(bind);
 ```
