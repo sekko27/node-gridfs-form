@@ -18,7 +18,7 @@ The module exports:
 
 For the details, see tests.
 
-```coffeescroipt
+```coffeescript
 // connection is a mongo connection, driver is the mongoose module
 Grid = require 'gridfs-stream'
 {BusboyParser, Form} = require 'gridfs-form'
