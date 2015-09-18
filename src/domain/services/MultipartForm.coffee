@@ -2,18 +2,20 @@ _ = require 'lodash'
 q = require 'q'
 
 class MultipartForm
-  constructor: (parser, grid) ->
-    return new MultipartForm(parser, grid) if not (@ instanceof MultipartForm)
+  constructor: (parser, grid, options) ->
+    return new MultipartForm(parser, grid, options) if not (@ instanceof MultipartForm)
     throw "Parser is not defined" if not parser
     throw "Grid is not defined" if not grid
+    options ?= {}
     Object.defineProperty @, 'parser', get: -> parser
     Object.defineProperty @, 'grid', get: -> grid
+    Object.defineProperty @, 'options', get: -> options
 
   bind: (request, callback) ->
     bind = []
     @parser.setup(request)
       .on 'field', fieldHandler(bind)
-      .on 'file', fileHandler(bind, @grid)
+      .on 'file', fileHandler(bind, @grid, @options)
       .on 'finish', finishHandler(bind, callback)
       .parse()
 
@@ -23,11 +25,12 @@ fieldHandler = (bind) ->
   (name, value) ->
     bind.push q.fcall -> field: name, value: value
 
-fileHandler = (bind, grid) ->
+fileHandler = (bind, grid, options) ->
   (name, stream, meta) ->
     defer = q.defer()
     bind.push defer.promise
-    ws = grid.createWriteStream metadata: meta
+    options.metadata = meta
+    ws = grid.createWriteStream options
     ws.on 'close', (file) ->
       defer.resolve field: name, value: file._id
     ws.on 'error', (err) ->
