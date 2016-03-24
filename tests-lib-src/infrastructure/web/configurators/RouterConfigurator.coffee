@@ -6,3 +6,4 @@ module.exports = (bbForm) ->
         console.log(err.stack, util.inspect err, depth: null, showHidden: true) if err
         return res.status(500).send(err) if err
         res.json(bind)
+

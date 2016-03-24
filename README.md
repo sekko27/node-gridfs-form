@@ -28,7 +28,7 @@ grid = new Grid connection.db, driver.mongo
 // app is an express instance
 
 app.post '/upload', (req, res) ->
-    form = new Form new Parser(), grid
+    form = new Form new BusboyParser(), grid
     form.bind req, (err, bind) ->
         return res.status(500).send(err) if err
         res.status(200).json(bind);

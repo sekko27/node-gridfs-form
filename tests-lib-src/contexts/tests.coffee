@@ -15,7 +15,7 @@ module.exports =
       args: [
         Helper.ref 'mongoose'
         connection:
-          url: 'mongodb://localhost/node-gridfs-form-test'
+          url: 'mongodb://localhost:29017/node-gridfs-form-test'
       ]
 
   grid:
@@ -62,6 +62,7 @@ module.exports =
       args: [
         Helper.ref 'bb'
         Helper.ref 'grid'
+        fileFilter: (name) -> name != 'source2'
       ]
 
   bb:
