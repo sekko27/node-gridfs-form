@@ -48,7 +48,6 @@ fileHandler = (bind, grid, filter) ->
 
 finishHandler = (bind, callback) ->
   (err) ->
-    console.log 'finito'
     q.all(bind).then(
       (fields) ->
         fullfilled = _.reduce fields, (

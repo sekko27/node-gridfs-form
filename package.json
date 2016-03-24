@@ -1,6 +1,6 @@
 {
   "name": "gridfs-form",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Multipart form binding storing files in gridfs.",
   "main": "index.js",
   "scripts": {
